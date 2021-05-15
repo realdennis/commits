@@ -21,10 +21,6 @@ on:
         description: MON~FRI?
         default: "false"
         required: true
-      branch:
-        description: "push to another branch"
-        default: "ci-test"
-        required: true
       forcePush:
         default: "true"
         required: true
@@ -49,5 +45,4 @@ jobs:
           --count=${{ github.event.inputs.count }} \
           --useDynamic=${{ github.event.inputs.useDynamic }} \
           --workdayOnly=${{ github.event.inputs.workdayOnly }} \
-          --branch=${{ github.event.inputs.branch }} \
           --forcePush=${{ github.event.inputs.forcePush }}

@@ -49,22 +49,13 @@ const argv = yargs(hideBin(process.argv))
     description: "only exec commit in MON~FRI, default is false",
     default: false,
   })
-  .option("branch", {
-    type: "string",
-    description: "branch name",
-    default: "dev",
-  })
   .option("forcePush", {
     type: "boolean",
-    description: "force push the branch?",
+    description: "force push the master branch?",
     default: true,
   }).argv;
-const { startDate, count, useDynamic, workdayOnly, branch, forcePush } = argv;
+const { startDate, count, useDynamic, workdayOnly, forcePush } = argv;
 
-try {
-  await $`git branch autoCommits-${branch}`;
-} catch (_) {}
-await $`git checkout autoCommits-${branch}`;
 
 if (startDate) {
   let _startDate = new Date(startDate);
@@ -75,4 +66,4 @@ if (startDate) {
   await mockCommits(lastCommitDate, Date.now(), count, useDynamic, workdayOnly);
 }
 
-await $`git push origin autoCommits-${branch} ${forcePush ? "--force" : ""}`;
+await $`git push origin master ${forcePush ? "--force" : ""}`;

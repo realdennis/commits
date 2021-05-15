@@ -18,4 +18,4 @@ jobs:
           git config --local user.name ${{ github.actor }}
           git remote set-url origin https://github.com/${{ github.repository }}
       - run: yarn install
-      - run: yarn start --count=10 --useDynamic=true --branch=dev-test
+      - run: yarn start --count=10 --useDynamic=true --branch=dev-test --forcePush=false
