@@ -1,9 +1,9 @@
-name: ci
+name: keep-green
 
 on:
-  push:
-    branches:
-      - master
+  schedule:
+    - cron: "0 12 * * *"
+
 jobs:
   autoCommits:
     runs-on: ubuntu-latest
