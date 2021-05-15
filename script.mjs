@@ -21,7 +21,7 @@ async function mockCommits(
     const getRandom = (count) => Math.ceil(Math.random() * count);
     const execCount = useDynamic ? getRandom(count) : count;
     for (let i = 0; i < execCount; i++) {
-      await $`git commit --allow-empty -m "mock commit (time=${execCount})" --date=${startDate.toString()}`;
+      await $`git commit --allow-empty -m "mock commit (time=${i})" --date=${startDate.toString()}`;
     }
     startDate.setDate(startDate.getDate() + 1);
   }
