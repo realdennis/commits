@@ -15,7 +15,7 @@ Just using mouse.
 
 
 ## How to use 
-1. Click the `Use this template`, do not use `Clone`, fork repo might not be calculated.
+1. Click the `Use this template`, do not use `Fork`, fork repo might not be calculated.
 2. After using template, it'll redirect to your repo's page, click `Actions`
 3. Click the `manually-trigger` in the left aside ![commit-history](https://user-images.githubusercontent.com/26633162/118362475-3573da80-b5c2-11eb-86ee-4852b3aab3a7.jpg)
 4. **Fill your email (need to be your github account email)**, and configure others
