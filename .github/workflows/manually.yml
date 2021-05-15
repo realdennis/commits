@@ -4,25 +4,23 @@ on:
   workflow_dispatch:
     inputs:
       email:
-        description: your email
+        description: Your Email
         required: true
       startDate:
         description: Start date
         default: "2021-01-01"
         required: true
       count:
-        description: commit count per day
+        description: Count? (commit count per day)
         default: "5"
         required: true
       useDynamic:
+        description: Use dynamic? (commit dynamic times between 1~count per day)
         default: "true"
         required: true
       workdayOnly:
-        description: MON~FRI?
+        description: Workday only? (only commit MON~FRI)
         default: "false"
-        required: true
-      forcePush:
-        default: "true"
         required: true
 
 jobs:
@@ -44,5 +42,4 @@ jobs:
           --startDate=${{ github.event.inputs.startDate }} \
           --count=${{ github.event.inputs.count }} \
           --useDynamic=${{ github.event.inputs.useDynamic }} \
-          --workdayOnly=${{ github.event.inputs.workdayOnly }} \
-          --forcePush=${{ github.event.inputs.forcePush }}
+          --workdayOnly=${{ github.event.inputs.workdayOnly }}
