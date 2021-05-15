@@ -48,8 +48,18 @@ const argv = yargs(hideBin(process.argv))
     type: "boolean",
     description: "only exec commit in MON~FRI, default is false",
     default: false,
+  })
+  .option("branch", {
+    type: "string",
+    description: "branch name",
+    default: "dev",
   }).argv;
-const { startDate, count, useDynamic, workdayOnly } = argv;
+const { startDate, count, useDynamic, workdayOnly, branch } = argv;
+
+try {
+  await $`git branch autoCommits-${branch}`;
+} catch (_) {}
+await $`git checkout autoCommits-${branch}`;
 
 if (startDate) {
   let _startDate = new Date(startDate);
@@ -59,3 +69,5 @@ if (startDate) {
   const lastCommitDate = await $`git log -1 --format=%cd `;
   await mockCommits(lastCommitDate, Date.now(), count, useDynamic, workdayOnly);
 }
+
+await $`git push origin autoCommits-${branch}`;
