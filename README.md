@@ -2,7 +2,13 @@
 Generate commits using github/actions, you can generate by using this template and configure + running on workflow! 
 
 No need for coding
+
 No need for install / run on local
+
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/26633162/118363461-0875f680-b5c7-11eb-9395-a4d0b02377d5.jpg" />
+</div>
 
 Just using mouse.
 
