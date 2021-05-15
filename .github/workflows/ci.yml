@@ -1,0 +1,21 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  autoCommits:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node v16
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.0'
+      - run: |
+          git config --local user.email "${{ secrets.EMAIL }}"
+          git config --local user.name ${{ github.actor }}
+          git remote set-url origin https://github.com/${{ github.repository }}
+      - run: yarn install
+      - run: yarn start --count=10 --useDynamic=true --branch=dev-test

@@ -53,8 +53,13 @@ const argv = yargs(hideBin(process.argv))
     type: "string",
     description: "branch name",
     default: "dev",
+  })
+  .option("forcePush", {
+    type: "boolean",
+    description: "force push the branch?",
+    default: true,
   }).argv;
-const { startDate, count, useDynamic, workdayOnly, branch } = argv;
+const { startDate, count, useDynamic, workdayOnly, branch, forcePush } = argv;
 
 try {
   await $`git branch autoCommits-${branch}`;
@@ -70,4 +75,4 @@ if (startDate) {
   await mockCommits(lastCommitDate, Date.now(), count, useDynamic, workdayOnly);
 }
 
-await $`git push origin autoCommits-${branch}`;
+await $`git push origin autoCommits-${branch} ${forcePush ? "--force" : ""}`;
