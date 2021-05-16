@@ -1,9 +1,9 @@
 # commits
 Generate commits using github/actions, you can generate by using this template and configure + running on workflow! 
 
-No need for coding
+No coding required
 
-No need for install / run on local
+No need to install or run on local
 
 
 <div align="center">
@@ -21,7 +21,8 @@ Just using mouse.
 
 
 ## How to use 
-1. Click the `Use this template`, do not use `Fork`, fork repo might not be calculated.
+1. Click the `Use this template`, do not use `Fork`, fork repo might not be calculated. ![Use this template](https://user-images.githubusercontent.com/26633162/118398548-b6e36f80-b68b-11eb-91eb-83625e917233.png)
+
 2. After using template, it'll redirect to your repo's page, click `Actions`
 3. Click the `manually-trigger` in the left aside ![commit-history](https://user-images.githubusercontent.com/26633162/118362475-3573da80-b5c2-11eb-86ee-4852b3aab3a7.jpg)
 4. **Fill your email (need to be your github account email)**, and configure others
